@@ -97,7 +97,7 @@ interface EditableTableProps<D> extends Omit<TableProps<D>, 'rowKey' | 'rowClass
 	containerId: string;
 }
 
-const EditableTable = <D extends Object, P>(props: EditableTableProps<D>) =>
+const EditableTable = <D extends Record<string, string | number>, P>(props: EditableTableProps<D>) =>
 {
 	const { containerId } = props
 	const tableComponent = useMemo<TableComponents<D>>(() => ({
