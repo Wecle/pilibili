@@ -1,13 +1,13 @@
-import { useState } from 'react'
+import Home from './components/Pages/Home'
 
 function App()
 {
 
-  return (
-    <div className="App">
-      <h1>PILIBILI</h1>
-    </div>
-  )
+	return (
+		<div className="App">
+			<Home />
+		</div>
+	)
 }
 
 export default App
