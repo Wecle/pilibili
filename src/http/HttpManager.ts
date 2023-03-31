@@ -9,7 +9,7 @@ export default class HttpManager
 	constructor()
 	{
 		this.instance = axios.create({
-			baseURL: process.env.API_ROOT,
+			baseURL: import.meta.env.VITE_API_ROOT,
 			timeout: 10000
 		})
 		this.initInterceptors()
