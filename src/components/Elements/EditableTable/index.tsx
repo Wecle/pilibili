@@ -60,7 +60,7 @@ const EditableCell: React.FC<EditableCellProps> = (props) =>
 							: Number(record[dataIndex])))
 			})
 		}
-	}, [editing, form, dataIndex, record, fieldValue, inputType])
+	}, [dataIndex, editing, fieldValue, form, inputType, record])
 
 	const defaultRule = useMemo<Rule[]>(() =>
 		[
