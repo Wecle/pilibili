@@ -1,0 +1,9 @@
+$namespace: 'home';
+
+.#{$namespace} {
+	width: 100px;
+
+	.textColor {
+		color: $green;
+	}
+}

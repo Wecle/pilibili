@@ -16,5 +16,16 @@ export default defineConfig({
 			"@": path.resolve(__dirname, "src")
 		}
 	},
-	envDir: "env"
+	envDir: "env",
+	css: {
+		preprocessorOptions: {
+			scss: {
+				additionalData: [
+					"@import './src/styles/colors.scss';",
+					"@import './src/styles/common.scss';",
+					"@import './src/styles/fonts.scss';"
+				].join('')
+			}
+		}
+	}
 })

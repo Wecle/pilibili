@@ -3,6 +3,7 @@ import { IAppState } from '@/store'
 import { ILoading } from '@/store/application/slice'
 import { useDispatch, useSelector } from 'react-redux'
 import { actionCreaters } from '@/store/application/thunk'
+import styles from '@/styles/Pages/Home/home.module.scss'
 
 interface Props
 {
@@ -24,8 +25,8 @@ const Main: React.FC = (props: Props) =>
 	}
 
 	return (
-		<div style={{ width: '200px' }}>
-			<h1>{loading.visible ? 'Open' : 'Close'}</h1>
+		<div className={styles.home}>
+			<h1 className={styles.textColor}>{loading.visible ? 'Open' : 'Close'}</h1>
 			<button onClick={onButtonClick}>test</button>
 		</div>
 	)
