@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useMemo } from 'react'
 import styles from '@/styles/Elements/EditableTable/editable-table.module.scss'
-import { Form, Space, Table, Tag } from 'antd';
-import type { ColumnsType, TableProps } from 'antd/es/table';
+import { Form, Table } from 'antd';
+import type { TableProps } from 'antd/es/table';
 import type { FormInstance, Rule } from 'antd/es/form';
 import { TableComponents } from 'rc-table/lib/interface';
 

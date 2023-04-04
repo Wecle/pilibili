@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux'
 import { IAppState } from './store'
 import { ILoading } from './store/application/slice'
 import styles from '@/styles/app.module.scss'
+import { intl } from './intl'
 
 interface Props
 {
@@ -20,7 +21,7 @@ const App: FC<Props> = (props) =>
 		<div className={styles.app}>
 			<Spin
 				spinning={loading.visible}
-				tip={loading.text || '加载中'}
+				tip={loading.text || intl.formatMessage({ id: "LOADING" })}
 				size="large"
 			/>
 			{children}

@@ -1,3 +1,4 @@
+import { ILocales } from "@/intl";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 export interface ILoading
@@ -8,13 +9,15 @@ export interface ILoading
 
 export interface IApplicationState
 {
-	loading: ILoading
+	loading: ILoading,
+	locale: ILocales
 }
 
 const initialState: IApplicationState = {
 	loading: {
 		visible: false
-	}
+	},
+	locale: 'zh-CN'
 }
 
 const slice = createSlice({

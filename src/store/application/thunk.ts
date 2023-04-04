@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { SetLoadingAction } from './slice'
 
 export interface IApplicationAction
