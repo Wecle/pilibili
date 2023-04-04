@@ -23,7 +23,6 @@ const slice = createSlice({
 	reducers: {
 		SetLoadingAction(state: IApplicationState, action: PayloadAction<ILoading>)
 		{
-			console.log(action)
 			return {
 				...state,
 				loading: action.payload
