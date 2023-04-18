@@ -7,7 +7,7 @@ const RootRouter: FC = () =>
 {
 	return (
 		<App>
-			<Routes navigate={URLS.HOME} />
+			<Routes />
 		</App>
 	)
 }

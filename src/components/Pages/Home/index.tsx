@@ -3,7 +3,7 @@ import { IAppState } from '@/store'
 import { ILoading } from '@/store/application/slice'
 import { useDispatch, useSelector } from 'react-redux'
 import { actionCreaters } from '@/store/application/thunk'
-import styles from '@/styles/Pages/Home/home.module.scss'
+import styles from '@/styles/Pages/Home/index.module.scss'
 
 interface Props
 {

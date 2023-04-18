@@ -1,0 +1,33 @@
+$namespace: "cover";
+
+.#{$namespace} {
+	width: 100%;
+	height: 100%;
+
+	.globalBanner {
+		width: 100%;
+		height: 100%;
+		background-repeat: no-repeat;
+		background-size: cover;
+		user-select: none;
+
+		.bannerInner {
+			width: 100%;
+			height: 100%;
+			backdrop-filter: blur(3px);
+			@include flexContainer(row, center, center);
+
+			>span {
+				color: white;
+				font-size: 72px;
+				font-weight: bolder;
+			}
+		}
+	}
+
+	.switchBtn {
+		position: absolute;
+		bottom: 10px;
+		right: 10px;
+	}
+}

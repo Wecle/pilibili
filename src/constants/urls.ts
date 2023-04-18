@@ -1,3 +1,4 @@
 export const URLS = {
-	HOME: '/home'
+	COVER: '/',
+	HOME: '/home',
 }
