@@ -1,6 +1,7 @@
-import React, { useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import styles from '@/styles/Pages/Cover/index.module.scss'
 import { Button } from 'antd'
+import { DoubleRightOutlined } from '@ant-design/icons';
 
 interface Props
 {
@@ -22,7 +23,6 @@ const Cover: React.FC<Props> = (props) =>
 	{
 		setImgIndex(index =>
 		{
-			console.log(index % 3)
 			setCurImg(coverList[index % 3])
 			return index + 1
 		})
@@ -32,10 +32,15 @@ const Cover: React.FC<Props> = (props) =>
 		<div className={styles.cover}>
 			<section className={styles.globalBanner} style={{ backgroundImage: `url(${curImg})` }}>
 				<div className={styles.bannerInner}>
-					<span>PiliBili</span>
+					<span>PILIBILI</span>
 				</div>
+
+				<Button className={styles.scrollDown} type="text" icon={<DoubleRightOutlined rotate={90} onClick={() => document.getElementById("app")?.scrollTo({ left: 0, top: document.body.scrollHeight, behavior: 'smooth' })} />} />
+				<Button className={styles.switchBtn} type="dashed" ghost onClick={onSwitchClick}>切换封面</Button>
 			</section>
-			<Button className={styles.switchBtn} type="dashed" ghost onClick={onSwitchClick}>切换封面</Button>
+			<section className={styles.feature}>
+				<span>PILIBILI</span>
+			</section>
 		</div>
 	)
 }
