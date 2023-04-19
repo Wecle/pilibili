@@ -18,7 +18,7 @@ const App: FC<Props> = (props) =>
 	// const [signing, setSigning] = useState<boolean>(true)
 
 	return (
-		<div id="app" className={styles.app}>
+		<div className={styles.app}>
 			<Spin
 				spinning={loading.visible}
 				tip={loading.text || intl.formatMessage({ id: "LOADING" })}

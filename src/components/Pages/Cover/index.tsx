@@ -29,13 +29,13 @@ const Cover: React.FC<Props> = (props) =>
 	}
 
 	return (
-		<div className={styles.cover}>
+		<div id='cover' className={styles.cover}>
 			<section className={styles.globalBanner} style={{ backgroundImage: `url(${curImg})` }}>
 				<div className={styles.bannerInner}>
 					<span>PILIBILI</span>
 				</div>
 
-				<Button className={styles.scrollDown} type="text" icon={<DoubleRightOutlined rotate={90} onClick={() => document.getElementById("app")?.scrollTo({ left: 0, top: document.body.scrollHeight, behavior: 'smooth' })} />} />
+				<Button className={styles.scrollDown} type="text" icon={<DoubleRightOutlined rotate={90} onClick={() => document.getElementById("cover")?.scrollTo({ left: 0, top: document.body.scrollHeight, behavior: 'smooth' })} />} />
 				<Button className={styles.switchBtn} type="dashed" ghost onClick={onSwitchClick}>切换封面</Button>
 			</section>
 			<section className={styles.feature}>

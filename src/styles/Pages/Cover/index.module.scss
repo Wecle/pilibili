@@ -3,6 +3,7 @@ $namespace: "cover";
 .#{$namespace} {
 	width: 100%;
 	height: 100%;
+	overflow-y: scroll;
 
 	.globalBanner {
 		width: 100%;
