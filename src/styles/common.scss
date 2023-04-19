@@ -66,3 +66,68 @@
 		background: rgba(149, 159, 166, 0.4);
 	}
 }
+
+@mixin animation($val) {
+	animation: $val;
+	-webkit-animation: $val;
+	-moz-animation: $val;
+	-ms-animation: $val;
+}
+
+@mixin keyframes($name, $animation) {
+	@keyframes #{$name} {
+
+		@each $progress,
+		$pVal in $animation {
+			#{$progress} {
+
+				@each $field,
+				$fVal in $pVal {
+					#{$field}: $fVal
+				}
+			}
+		}
+	}
+
+	@-moz-keyframes #{$name} {
+
+		@each $progress,
+		$pVal in $animation {
+			#{$progress} {
+
+				@each $field,
+				$fVal in $pVal {
+					#{$field}: $fVal
+				}
+			}
+		}
+	}
+
+	@-webkit-keyframes #{$name} {
+
+		@each $progress,
+		$pVal in $animation {
+			#{$progress} {
+
+				@each $field,
+				$fVal in $pVal {
+					#{$field}: $fVal
+				}
+			}
+		}
+	}
+
+	@-ms-keyframes #{$name} {
+
+		@each $progress,
+		$pVal in $animation {
+			#{$progress} {
+
+				@each $field,
+				$fVal in $pVal {
+					#{$field}: $fVal
+				}
+			}
+		}
+	}
+}

@@ -23,7 +23,8 @@ export default defineConfig({
 				additionalData: [
 					"@import './src/styles/colors.scss';",
 					"@import './src/styles/common.scss';",
-					"@import './src/styles/fonts.scss';"
+					"@import './src/styles/fonts.scss';",
+					"@import './src/styles/animation.scss';"
 				].join('')
 			}
 		}

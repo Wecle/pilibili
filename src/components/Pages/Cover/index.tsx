@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import styles from '@/styles/Pages/Cover/index.module.scss'
 import { Button } from 'antd'
 import { DoubleRightOutlined } from '@ant-design/icons';
+import ScreenShot from 'js-web-screen-shot';
 
 interface Props
 {
@@ -28,14 +29,22 @@ const Cover: React.FC<Props> = (props) =>
 		})
 	}
 
+	// const onScreenShot = () =>
+	// {
+	// 	new ScreenShot({
+	// 		enableWebRtc: true,
+	// 	})
+	// }
+
 	return (
 		<div id='cover' className={styles.cover}>
 			<section className={styles.globalBanner} style={{ backgroundImage: `url(${curImg})` }}>
 				<div className={styles.bannerInner}>
-					<span>PILIBILI</span>
+					<span className={styles.innerTitle}>PILIBILI</span>
+					<Button className={styles.innerBtn} type='dashed' size='large' ghost>开始探索</Button>
 				</div>
 
-				<Button className={styles.scrollDown} type="text" icon={<DoubleRightOutlined rotate={90} onClick={() => document.getElementById("cover")?.scrollTo({ left: 0, top: document.body.scrollHeight, behavior: 'smooth' })} />} />
+				<DoubleRightOutlined className={styles.scrollDown} rotate={90} onClick={() => document.getElementById("cover")?.scrollTo({ left: 0, top: document.body.scrollHeight, behavior: 'smooth' })} />
 				<Button className={styles.switchBtn} type="dashed" ghost onClick={onSwitchClick}>切换封面</Button>
 			</section>
 			<section className={styles.feature}>

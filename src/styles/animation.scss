@@ -1,0 +1,50 @@
+@mixin text-float-keyframes($name, $fromX, $toX, $fromY, $toY) {
+	$aniForm: (-webkit-filter: blur(12px),
+			filter: blur(12px),
+			opacity: 0,
+			transform: translate($fromX, $fromY));
+	$aniTo: (-webkit-filter: blur(0px),
+			filter: blur(0px),
+			opacity: 1,
+			transform: translate($toX, $toY));
+	$animation: (0%: $aniForm, 100%: $aniTo);
+
+	@include keyframes($name, $animation);
+}
+
+@mixin tap-infinite-keyframes($name) {
+	$ani1: (-webkit-transform: translate(-50%, -45px),
+			transform: translate(-50%, -45px),
+			-webkit-animation-timing-function: ease-in,
+			animation-timing-function: ease-in,
+			opacity: 1, );
+	$ani2: (opacity: 1);
+	$ani3: (-webkit-transform: translate(-50%, -24px),
+			transform: translate(-50%, -24px),
+			-webkit-animation-timing-function: ease-in,
+			animation-timing-function: ease-in, );
+	$ani4: (-webkit-transform: translate(-50%, -12px),
+			transform: translate(-50%, -12px),
+			-webkit-animation-timing-function: ease-in,
+			animation-timing-function: ease-in, );
+	$ani5: (-webkit-transform: translate(-50%, -6px),
+			transform: translate(-50%, -6px),
+			-webkit-animation-timing-function: ease-in,
+			animation-timing-function: ease-in, );
+	$ani6: (-webkit-transform: translate(-50%, -4px),
+			transform: translate(-50%, -4px),
+			-webkit-animation-timing-function: ease-in,
+			animation-timing-function: ease-in, );
+	$ani7: (-webkit-transform: translate(-50%, 0px),
+			transform: translate(-50%, 0px),
+			-webkit-animation-timing-function: ease-out,
+			animation-timing-function: ease-out, );
+	$ani8: (-webkit-transform: translate(-50%, 0px),
+			transform: translate(-50%, 0px),
+			-webkit-animation-timing-function: ease-out,
+			animation-timing-function: ease-out,
+			opacity: 1, );
+	$animation: (0%: $ani1, 24%: $ani2, 40%: $ani3, 65%: $ani4, 82%: $ani5, 93%: $ani6, (25%, 55%, 75%, 87%): $ani7, 100%: $ani8);
+
+	@include keyframes($name, $animation);
+}
