@@ -12,7 +12,7 @@ import IntlContainer from './components/Elements/IntlContainer'
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
 	<React.StrictMode>
 		<Provider store={store}>
-			<IntlContainer locale={store.getState().application.locale}>
+			<IntlContainer>
 				<ConfigProvider
 					autoInsertSpaceInButton={false}
 					locale={store.getState().application.locale === 'zh-CN' ? zhCN : enUS}

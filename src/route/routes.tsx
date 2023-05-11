@@ -16,12 +16,12 @@ const Routes: FC<Props> = (props) =>
 	const element = useRoutes([
 		{
 			path: '/',
-			element: <Cover />
-		},
-		{
-			path: URLS.HOME,
 			element: <Home />
-		}
+		},
+		// {
+		// 	path: URLS.HOME,
+		// 	element: <Home />
+		// }
 	])
 
 	return element

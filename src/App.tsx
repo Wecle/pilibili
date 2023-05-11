@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux'
 import { IAppState } from './store'
 import { ILoading } from './store/application/slice'
 import styles from '@/styles/app.module.scss'
-import { intl } from './intl'
+import { useIntl } from 'react-intl'
 
 interface Props
 {
@@ -14,6 +14,7 @@ interface Props
 const App: FC<Props> = (props) =>
 {
 	const { children } = props
+	const intl = useIntl()
 	const loading = useSelector<IAppState, ILoading>(state => state.application.loading)
 	// const [signing, setSigning] = useState<boolean>(true)
 

@@ -1,0 +1,9 @@
+$namespace: 'lazyImage';
+
+.#{$namespace} {
+	:global {
+		.ant-image {
+			height: 100%;
+		}
+	}
+}

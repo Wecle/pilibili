@@ -6,24 +6,15 @@ import store from '@/store'
 
 export type ILocales = 'en-US' | 'zh-CN'
 
-export function getLocales(lang: ILocales)
-{
-	switch (lang)
-	{
-		case ('en-US'):
-			return en_US
-		case ('zh-CN'):
-			return zh_CN
-		default:
-			return en_US
-	}
-}
-
-const cache = createIntlCache()
 const message = {
 	"en-US": en_US,
 	"zh-CN": zh_CN
 }
+
+export const getLocales = (lang: ILocales) => message[lang]
+
+const cache = createIntlCache()
+
 export const intl = createIntl(
 	{
 		locale: store.getState().application.locale,

@@ -62,6 +62,7 @@
 	"editor.tabSize": 4,
 	"editor.wordWrap": "on",
 	"editor.renderWhitespace": "all",
+	"editor.autoIndent": true,
 	"javascript.format.insertSpaceBeforeAndAfterBinaryOperators": true,
 	"javascript.format.insertSpaceAfterOpeningAndBeforeClosingTemplateStringBraces": false,
 	"javascript.format.insertSpaceAfterOpeningAndBeforeClosingJsxExpressionBraces": true,

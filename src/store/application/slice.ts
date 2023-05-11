@@ -30,12 +30,20 @@ const slice = createSlice({
 				...state,
 				loading: action.payload
 			}
+		},
+		SetLocaleAction(state: IApplicationState, action: PayloadAction<ILocales>)
+		{
+			return {
+				...state,
+				locale: action.payload
+			}
 		}
 	}
 })
 
 export const {
-	SetLoadingAction
+	SetLoadingAction,
+	SetLocaleAction
 } = slice.actions
 
 export default slice.reducer

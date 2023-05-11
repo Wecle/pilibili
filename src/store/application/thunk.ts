@@ -1,10 +1,12 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { SetLoadingAction } from './slice'
+import { ILocales } from '@/intl';
+import { SetLoadingAction, SetLocaleAction } from './slice'
 
 export interface IApplicationAction
 {
 	showLoading: (text?: string) => any;
 	hideLoading: () => any;
+	switchLocate: (locate: ILocales) => any;
 }
 
 export const actionCreaters: IApplicationAction = {
@@ -15,5 +17,6 @@ export const actionCreaters: IApplicationAction = {
 		{
 			dispatch(SetLoadingAction({ visible: false }))
 		}, 100)
-	}
+	},
+	switchLocate: (locate: ILocales): any => (dispatch: any) => dispatch(SetLocaleAction(locate))
 }
