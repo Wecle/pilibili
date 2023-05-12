@@ -1,12 +1,10 @@
-import React from 'react'
-import { IAppState } from '@/store'
-import { ILoading } from '@/store/application/slice'
-import { useDispatch, useSelector } from 'react-redux'
-import { actionCreaters } from '@/store/application/thunk'
+import React, { useEffect, useState } from 'react'
 import styles from '@/styles/Pages/Home/index.module.scss'
 import Cover from '../Cover'
 import LazyImage from '@/components/Elements/LazyImage'
 import { ICoverList } from '@/http/Types'
+import Icon from '@/components/Elements/Icon/index'
+
 
 interface Props
 {
@@ -15,8 +13,6 @@ interface Props
 
 const Main: React.FC = (props: Props) =>
 {
-	const dispatch = useDispatch()
-	const loading = useSelector<IAppState, ILoading>(state => state.application.loading)
 
 	const coverList: ICoverList[] = [
 		{
@@ -33,15 +29,6 @@ const Main: React.FC = (props: Props) =>
 		}
 	]
 
-	const onButtonClick = () =>
-	{
-		dispatch(actionCreaters.showLoading())
-		setTimeout(() =>
-		{
-			dispatch(actionCreaters.hideLoading())
-		}, 3000);
-	}
-
 	return (
 		<div id='home' className={styles.home}>
 			<Cover coverList={coverList} scrollDom='home' />
@@ -49,13 +36,17 @@ const Main: React.FC = (props: Props) =>
 				<div style={{ display: 'flex', flexDirection: "column", width: '300px' }}>
 					{coverList.map(cover => (
 						<div key={cover.url}>
-							<LazyImage src={cover.url} alt={cover.url} type='progressive' thumb={cover.thumb} />
+							<LazyImage
+								src={cover.url}
+								alt={cover.url}
+								type='progressive'
+								thumb={cover.thumb}
+							/>
 						</div>
 					))}
 				</div>
 			</section>
-			<h1 className={styles.textColor}>{loading.visible ? 'Open' : 'Close'}</h1>
-			<button onClick={onButtonClick}>test</button>
+			<Icon name='ic-language' />
 		</div>
 	)
 }

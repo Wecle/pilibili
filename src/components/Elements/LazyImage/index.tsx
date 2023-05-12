@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef, useCallback, useMemo } from 'react';
 import { Image } from 'antd';
 import styles from '@/styles/Elements/LazyImage/index.module.scss'
-import { sleep } from '@/constants/utils';
+import { isEmpty, sleep } from '@/constants/utils';
 
 const ErrorImage = "https://cdn.jsdelivr.net/gh/Wecle/md-tube/pilibili/20230511134321.png"
 
@@ -9,8 +9,8 @@ interface Props
 {
 	src: string;
 	alt: string;
-	width?: string;
-	height?: string;
+	width?: string | number;
+	height?: string | number;
 	// 图片加载类型
 	type?: 'normal' | 'progressive'
 	// 预览开关
@@ -31,17 +31,18 @@ const LazyImage: React.FC<Props> = (props) =>
 	const imageRef = useRef<HTMLImageElement>(null);
 
 	const baseStyle = {
-		width: width ?? '100%',
-		height: height ?? '100%'
+		width: isEmpty(width) ? '100%' : typeof width === 'string' ? width : `${width}px`,
+		height: isEmpty(height) ? '100%' : typeof height === 'string' ? height : `${height}px`
 	}
 
-	const progressiveStyle = useMemo(() => (
+	const progressiveStyle = () => (
 		{
 			filter: isLoaded ? 'none' : `blur(${blurProgress}px)`,
 			transition: 'filter 1s'
-		}), [isLoaded, blurProgress])
+		}
+	)
 
-	const loadImage = useCallback(async () =>
+	const loadImage = async () =>
 	{
 		if (!thumb && isProgressive)
 		{
@@ -71,7 +72,7 @@ const LazyImage: React.FC<Props> = (props) =>
 			xhr.open('GET', src);
 			xhr.send();
 		}
-	}, [src, isProgressive, thumb])
+	}
 
 	useEffect(() =>
 	{
