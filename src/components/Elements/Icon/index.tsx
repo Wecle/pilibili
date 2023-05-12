@@ -67,7 +67,6 @@ const Icon: React.FC<IconProps> = (props) =>
 
 	const onMouseClick = () =>
 	{
-		console.log(111)
 		onClick && onClick()
 	}
 
@@ -90,6 +89,8 @@ const Icon: React.FC<IconProps> = (props) =>
 	const onMouseUp = () =>
 	{
 		setIsActive(false)
+		// 当 interactive 设为 true 时点击事件会失效，暂时先这样处理，TODO: 可以触发 Click
+		interactive && onMouseClick()
 	}
 
 	return (
