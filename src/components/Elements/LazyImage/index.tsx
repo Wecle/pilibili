@@ -93,7 +93,12 @@ const LazyImage: React.FC<Props> = (props) =>
 
 	return (
 		<div className={styles.lazyImage} ref={imageRef} style={baseStyle}>
-			<img src={imageSrc ?? (isProgressive ? '' : ErrorImage)} alt={alt} style={isProgressive || !!thumb ? { ...progressiveStyle, ...baseStyle } : baseStyle} />
+			<Image
+				src={imageSrc ?? (isProgressive ? '' : ErrorImage)}
+				alt={alt}
+				style={isProgressive || !!thumb ? { ...progressiveStyle, ...baseStyle } : baseStyle}
+				preview={!!preview}
+			/>
 		</div>
 	);
 };
