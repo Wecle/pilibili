@@ -76,14 +76,13 @@ const Cover: React.FC<Props> = (props) =>
 				>
 					{intl.formatMessage({ id: 'SWITCH_COVER' })}
 				</Button>
-				<div className={styles.internationalBtn}>
-					<Icon
-						name='ic-language'
-						cursor='pointer'
-						interactive
-						onClick={onGlobalClick}
-					/>
-				</div>
+				<Icon
+					className={styles.internationalBtn}
+					name='ic-language'
+					cursor='pointer'
+					interactive
+					onClick={onGlobalClick}
+				/>
 			</section>
 		</div>
 	);
